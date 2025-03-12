@@ -1,0 +1,20 @@
+h1 {
+  margin-bottom: 0;
+  text-align: center;
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+}
+
+nav a {
+  margin-top: 10px;
+  margin-left: -1px;
+  border-radius: 0%;
+  min-height: 56px;
+  padding-left: 32px;
+  padding-right: 32px;
+  text-transform: uppercase;
+  font-size: small;
+}

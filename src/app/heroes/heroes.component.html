@@ -1,0 +1,33 @@
+<div>
+  <h3>Add Hero</h3>
+  <div class="add-hero">
+    <label for="new-hero">Hero name: </label>
+    <div class="input-wrapper">
+      <input class="custom-input" id="new-hero" #heroName />
+    </div>
+    <button
+      mat-flat-button
+      color="accent"
+      (click)="add(heroName.value); heroName.value = ''"
+    >
+      Add hero
+    </button>
+  </div>
+  <h2>My Heroes</h2>
+  <ul>
+    <li class="hero-item" *ngFor="let hero of heroes">
+      <a
+        mat-stroked-button
+        color="primary"
+        class="hero-btn"
+        routerLink="/detail/{{ hero.id }}"
+      >
+        <div class="badge">{{ hero.id }}</div>
+        {{ hero.name }}
+      </a>
+      <button mat-button color="accent" class="delete" (click)="delete(hero)">
+        <mat-icon class="delete-icon">delete_outline</mat-icon>
+      </button>
+    </li>
+  </ul>
+</div>

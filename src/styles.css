@@ -1,0 +1,17 @@
+/* Application-wide Styles */
+body {
+  margin: 2em;
+}
+
+* {
+  font-family: Inter, Arial, Helvetica, sans-serif;
+}
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Inter, Roboto, "Helvetica Neue", sans-serif;
+}

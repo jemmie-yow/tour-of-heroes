@@ -1,0 +1,45 @@
+/* DashboardComponent's private CSS styles */
+:host {
+  display: block;
+  margin: 24px 0;
+}
+
+h2 {
+  text-align: center;
+}
+
+.heroes-menu {
+  padding: 0;
+  margin: auto;
+  max-width: 1000px;
+
+  /* flexbox */
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-content: flex-start;
+  align-items: flex-start;
+}
+
+a {
+  /* font-size: small; */
+  /* font-weight: bold; */
+  min-height: 48px;
+  /* width: 100%; */
+  /* min-width: 70px; */
+  margin: 0.5rem auto;
+  /* box-sizing: border-box; */
+
+  /* flexbox */
+  order: 0;
+  flex: 0 1 auto;
+  align-self: auto;
+}
+
+@media (min-width: 600px) {
+  a {
+    width: 18%;
+    box-sizing: content-box;
+  }
+}

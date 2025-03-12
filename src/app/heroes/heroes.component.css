@@ -1,0 +1,75 @@
+/* HeroesComponent's private CSS styles */
+:host {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+h2,
+h3 {
+  text-align: center;
+}
+
+.hero-item {
+  position: relative;
+  margin: 4px 0;
+}
+
+.add-hero {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 36px;
+  gap: 8px;
+}
+
+.input-wrapper {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.custom-input {
+  height: 100%;
+}
+
+ul {
+  padding: 0;
+  width: 30rem;
+}
+
+li {
+  list-style-type: none;
+  width: 100%;
+}
+
+.hero-btn {
+  width: 100%;
+}
+
+.delete {
+  position: absolute;
+  right: 0;
+  min-width: 36px;
+  padding: 0px;
+}
+
+.delete-icon {
+  margin: 0;
+}
+
+.badge {
+  display: inline-block;
+}
+
+.add-button {
+  padding: 0.5rem 1.5rem;
+  font-size: 1rem;
+  margin-bottom: 2rem;
+}
+
+.add-button:hover {
+  color: white;
+  background-color: #42545c;
+}

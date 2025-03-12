@@ -1,0 +1,24 @@
+/* HeroDetailComponent's private CSS styles */
+:host {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+input {
+  font-size: 1em;
+  padding: 0.5rem;
+}
+
+.btn-group {
+  display: flex;
+  column-gap: 8px;
+}
+
+.hero-detail {
+  display: flex;
+  flex-direction: column;
+  row-gap: 16px;
+  width: 600px;
+  margin-bottom: 16px;
+}

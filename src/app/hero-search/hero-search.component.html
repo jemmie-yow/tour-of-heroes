@@ -1,0 +1,20 @@
+<mat-form-field class="custom-input" appearance="outline">
+  <mat-label>Hero Search</mat-label>
+  <input matInput #searchBox (input)="search(searchBox.value)" />
+</mat-form-field>
+<mat-list class="list" role="list">
+  <mat-list-item
+    class="list-item"
+    role="listitem"
+    *ngFor="let hero of heroes$ | async"
+  >
+    <a
+      class="hero-item"
+      mat-flat-button
+      color="accent"
+      routerLink="/detail/{{ hero.id }}"
+    >
+      {{ hero.name }}
+    </a>
+  </mat-list-item>
+</mat-list>
