@@ -22,7 +22,7 @@ export class DashboardComponent {
       .getHeroes()
       .pipe(
         // sort by clicks
-        map((heroes) => heroes.sort((a, b) => b.clicks - a.clicks)),
+        map((heroes) => heroes.sort((a, b) => b.userVisits - a.userVisits)),
         // take the first 4
         map((heroes) => heroes.slice(0, 4))
       )

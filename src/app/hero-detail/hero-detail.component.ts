@@ -24,7 +24,7 @@ export class HeroDetailComponent {
 
   updateHeroClick(hero: Hero) {
     if (hero) {
-      hero.clicks++;
+      hero.userVisits++;
       this.heroService.updateHero(hero).subscribe();
     }
   }

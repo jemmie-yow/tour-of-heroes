@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Hero } from './hero';
-import { catchError, map, Observable, of, tap } from 'rxjs';
+import { catchError, Observable, of, tap } from 'rxjs';
 import { MessageService } from './message.service';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 
@@ -8,7 +8,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
   providedIn: 'root',
 })
 export class HeroService {
-  private heroesUrl = 'api/heroes';
+  private heroesUrl = 'http://localhost:8080/api/hero';
   private httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' }),
   };
@@ -19,7 +19,7 @@ export class HeroService {
   ) {}
 
   getHeroes(): Observable<Hero[]> {
-    return this.http.get<Hero[]>(this.heroesUrl).pipe(
+    return this.http.get<Hero[]>(this.heroesUrl, this.httpOptions).pipe(
       tap((_) => this.log('fetched heroes')),
       catchError(this.handleError<Hero[]>('getHeroes', []))
     );
@@ -36,14 +36,16 @@ export class HeroService {
     if (!term.trim()) {
       return of([]);
     }
-    return this.http.get<Hero[]>(`${this.heroesUrl}/?name=${term}`).pipe(
-      tap((res) =>
-        res.length
-          ? this.log(`found heroes matching "${term}"`)
-          : this.log(`no heroes matching "${term}"`)
-      ),
-      catchError(this.handleError<Hero[]>('searchHeroes', []))
-    );
+    return this.http
+      .get<Hero[]>(`${this.heroesUrl}?keyword=${term}`, this.httpOptions)
+      .pipe(
+        tap((res) =>
+          res.length
+            ? this.log(`found heroes matching "${term}"`)
+            : this.log(`no heroes matching "${term}"`)
+        ),
+        catchError(this.handleError<Hero[]>('searchHeroes', []))
+      );
   }
 
   addHero(hero: Hero): Observable<Hero> {

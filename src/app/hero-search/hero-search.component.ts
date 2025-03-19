@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { Hero } from '../hero';
 import {
   debounceTime,
-  distinct,
   distinctUntilChanged,
   Observable,
   Subject,
