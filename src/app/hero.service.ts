@@ -8,7 +8,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
   providedIn: 'root',
 })
 export class HeroService {
-  private heroesUrl = 'http://localhost:8080/api/hero';
+  private heroesUrl = '/api/hero';
   private httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' }),
   };
